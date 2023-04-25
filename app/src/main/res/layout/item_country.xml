@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:padding="10dp">
+
+
+    <ImageView
+        android:id="@+id/img_country"
+        android:layout_width="36dp"
+        android:layout_height="@dimen/dimen_24"
+        android:layout_marginTop="10dp"
+        android:layout_alignParentStart="true"
+        app:srcCompat="@drawable/lithuania"
+        app:itemIconTint="@color/colorAccent"
+        android:layout_centerInParent="true"
+        android:contentDescription="TODO" />
+
+    <TextView
+        android:id="@+id/tv_Country"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_toEndOf="@+id/img_country"
+        android:text="Lithuania"
+        android:textColor="@android:color/white"
+        android:textSize="16sp" />
+</RelativeLayout>

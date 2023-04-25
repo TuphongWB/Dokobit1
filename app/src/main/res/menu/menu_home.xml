@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <group android:checkableBehavior="single">
+
+        <item android:id="@+id/nav_dasboard"
+              android:title="@string/nav_dashboard"
+              android:icon="@drawable/dashboard"/>
+        <item android:id="@+id/nav_document"
+            android:title="@string/nav_documents"
+            android:icon="@drawable/document"/>
+        <item android:id="@+id/nav_upload"
+            android:title="@string/nav_upload"
+            android:icon="@drawable/upload"/>
+        <item android:id="@+id/nav_validate"
+            android:title="@string/nav_validate"
+            android:icon="@drawable/validation"/>
+    </group>
+    <item android:title="@string/nav_account">
+        <menu>
+            <item android:id="@+id/nav_setting"
+                android:title="@string/nav_setting"
+                android:icon="@drawable/cogwheel"/>
+            <item android:id="@+id/nav_help"
+                android:title="@string/nav_help"
+                android:icon="@drawable/question"/>
+            <item android:id="@+id/nav_logout"
+                android:title="@string/nav_logout"
+                android:icon="@drawable/export"/>
+        </menu>
+    </item>
+
+</menu>

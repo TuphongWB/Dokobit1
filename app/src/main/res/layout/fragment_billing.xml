@@ -1,0 +1,469 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+<androidx.core.widget.NestedScrollView xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".Fragment.BillingFragment">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/white">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Overview"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginBottom="@dimen/dimen_16"
+        android:textSize="24sp"/>
+
+
+<androidx.cardview.widget.CardView
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/dimen_16"
+    app:cardCornerRadius="@dimen/dimen_4"
+    >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/dimen_16"
+        android:background="@color/white"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Free"
+                android:textColor="@color/black"
+                android:textStyle="bold"
+                android:textSize="16sp" />
+
+
+            <Button
+                android:id="@+id/upgrade"
+                android:layout_width="wrap_content"
+                android:layout_height="@dimen/dimen_32"
+                android:layout_alignParentEnd="true"
+                android:background="@drawable/btn_continue"
+                android:text="@string/upgrade_plan"
+                android:textSize="12sp"
+                android:textAllCaps="false"
+                android:textColor="@color/white" />
+
+        </RelativeLayout>
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="User limit --1"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:textSize="12sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:alpha="0.5"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monthly signature limit --3"
+            android:textColor="@color/black"
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:textSize="12sp" />
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@color/grey"
+
+            android:layout_marginBottom="@dimen/dimen_8"
+            android:alpha="0.5"
+            />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Monthly usage counter reset date -- 2023-05-14"
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+</androidx.cardview.widget.CardView>
+    <GridLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/dimen_8"
+        android:layout_marginEnd="@dimen/dimen_8"
+        android:rowCount="1"
+        android:columnCount="2">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="8dp"
+
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:background="@color/white"
+
+                android:padding="@dimen/dimen_8"
+                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Document stogare"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:textColor="@color/grey"
+                android:layout_marginBottom="@dimen/dimen_8"
+                android:textSize="12sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50 MB / 100 MB"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:layout_marginTop="@dimen/dimen_32"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/dimen_4"
+                    android:textSize="16sp" />
+            <ProgressBar
+                android:id="@+id/progressBar"
+                style="?android:attr/progressBarStyleHorizontal"
+                android:layout_width="match_parent"
+                android:layout_height="8dp"
+                android:layout_gravity="center_vertical"
+                android:orientation="vertical"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="12dp"
+                android:max="100"
+                android:progress="50"
+                android:indeterminate="false"
+                android:indeterminateTint="@color/light_blue_600"
+                android:progressDrawable="@drawable/progressbar"/>
+            </LinearLayout>
+
+
+        </androidx.cardview.widget.CardView>
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardCornerRadius="8dp"
+            android:background="@color/white"
+
+            app:cardElevation="4dp">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="128dp"
+                android:padding="@dimen/dimen_8"
+                android:background="@color/white"
+
+                android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:text="Signatures used this month\n(2023-04-14 - 2023-05-14)"
+                android:lineSpacingExtra="4dp"
+                android:textColor="@color/grey"
+                android:layout_marginBottom="@dimen/dimen_8"
+                android:textSize="12sp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:layout_marginTop="@dimen/dimen_12"
+                    android:layout_marginBottom="@dimen/dimen_4"
+                    android:text="0 / 3"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold" />
+            </LinearLayout>
+
+        </androidx.cardview.widget.CardView>
+    </GridLayout>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardview_upgrade"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/dimen_16"
+        app:cardCornerRadius="@dimen/dimen_4"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            >
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="@dimen/dimen_12"
+                android:layout_centerVertical="true"
+                android:layout_toStartOf="@+id/img_upgrade"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:text="Want to sign more?"
+                    android:textColor="@color/black"
+                    android:textStyle="bold"
+                    android:layout_marginBottom="@dimen/dimen_8"
+                    android:textSize="16sp" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dimen_8"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:text="Upgrade your plan and get more signatures."
+                    android:textColor="@color/grey"
+                    android:layout_marginBottom="@dimen/dimen_8"
+                    android:textSize="12sp" />
+                <Button
+                    android:id="@+id/upgrade2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="@dimen/dimen_32"
+                    android:background="@drawable/btn_button"
+                    android:text="@string/upgrade_plan"
+                    android:textColor="@color/colorPrimary"
+                    android:layout_marginStart="@dimen/dimen_12"
+                    android:textAllCaps="false"
+                    android:layout_marginEnd="@dimen/dimen_8"/>
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/img_upgrade"
+                android:layout_width="160dp"
+                android:layout_height="140dp"
+                android:layout_alignParentEnd="true"
+                android:scaleType="centerCrop"
+                android:src="@drawable/upgrade" />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical">
+        <TextView
+            android:id="@+id/personal_details"
+            android:layout_centerVertical="true"
+            android:layout_width="wrap_content"
+            android:layout_marginTop="@dimen/dimen_32"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_height="wrap_content"
+            android:text="@string/billing_details"
+            android:textSize="24sp"
+            android:textColor="@color/black"
+            />
+
+        <Button
+            android:gravity="center"
+            android:layout_width="96dp"
+            android:layout_height="@dimen/dimen_24"
+            android:layout_centerVertical="true"
+            android:layout_alignBottom="@id/personal_details"
+            android:layout_marginStart="@dimen/dimen_16"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:background="@drawable/btn_line"
+            android:layout_toEndOf="@+id/personal_details"
+            android:textSize="12sp"
+            android:text="@string/edit"
+            android:textColor="@color/colorPrimary"
+            android:drawableStart="@drawable/pencil"
+            android:paddingStart="@dimen/dimen_16"
+            android:textAllCaps="false"
+            android:paddingEnd="@dimen/dimen_16" />
+    </RelativeLayout>
+    <TextView
+        android:text="Full name"
+        android:id="@+id/fullname"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Name"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Email for invoices"
+        android:id="@+id/email"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Name@gmail.com"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Address"
+        android:id="@+id/address"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@null"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="Invoice note (e.g. PO number)"
+        android:id="@+id/nameLabel"
+        android:layout_marginTop="@dimen/dimen_24"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/grey"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:text="@null"
+        android:layout_marginTop="@dimen/dimen_8"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:textColor="@color/black"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"/>
+    <TextView
+        android:id="@+id/pay"
+        android:layout_centerVertical="true"
+        android:layout_width="wrap_content"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_height="wrap_content"
+        android:text="Payment method"
+        android:textStyle="bold"
+        android:textSize="18sp"
+        android:textColor="@color/black"
+        />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_margin="@dimen/dimen_16"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dimen_8"
+        android:layout_gravity="center"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:padding="@dimen/dimen_16"
+            android:background="@drawable/border_upgrade"
+            android:alpha="0.4"
+
+            >
+            <ImageView
+                android:id="@+id/oval"
+                android:layout_width="16dp"
+                android:layout_height="@dimen/dimen_16"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:layout_centerVertical="true"
+                android:src="@drawable/oval"/>
+            <ImageView
+                android:id="@+id/transfer"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/oval"
+                android:layout_marginStart="@dimen/dimen_24"
+                android:layout_centerVertical="true"
+
+                android:src="@drawable/transfer"/>
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_toEndOf="@+id/transfer"
+                android:layout_marginStart="@dimen/dimen_24"
+                android:orientation="vertical">
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Bank transfer"
+                    android:textColor="@color/black"/>
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Invoice will be sent via email"
+                    android:textColor="@color/grey"/>
+
+            </LinearLayout>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <androidx.cardview.widget.CardView
+        android:id="@+id/linkcard"
+        android:layout_width="match_parent"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:layout_marginBottom="72dp"
+        android:layout_height="wrap_content"
+        app:cardCornerRadius="@dimen/dimen_8"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="72dp"
+            android:padding="@dimen/dimen_16"
+            android:background="@drawable/border_upgrade2"
+
+
+            >
+            <ImageView
+                android:id="@+id/add"
+                android:layout_width="24dp"
+                android:layout_height="@dimen/dimen_24"
+                android:layout_marginStart="@dimen/dimen_12"
+                android:layout_centerVertical="true"
+                android:src="@drawable/baseline_add_24"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/dimen_24"
+                android:layout_toEndOf="@+id/add"
+                android:text="Bank transfer"
+                android:layout_centerVertical="true"
+                android:textColor="@color/black"/>
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+
+
+</LinearLayout>
+</androidx.core.widget.NestedScrollView>
+</layout>

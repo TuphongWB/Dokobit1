@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/cv_layout"
+    app:cardBackgroundColor="@color/transparent"
+    android:animateLayoutChanges="true"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="4dp"
+    app:cardUseCompatPadding="true">
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:animateLayoutChanges="true"
+        android:padding="12dp"
+        >
+        <LinearLayout
+            android:id="@+id/layout"
+            android:layout_width="wrap_content"
+            android:layout_height="80dp"
+            android:orientation="vertical"
+            >
+            <ImageView
+                android:id="@+id/imgdoc"
+                android:backgroundTint="@color/white"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_marginStart="@dimen/dimen_16"
+                android:paddingLeft="14dp"
+                android:paddingRight="14dp"
+                android:padding="4dp"
+                android:src="@drawable/document"
+                app:tint="@color/white" />
+            <TextView
+                android:id="@+id/tv_doc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:text="ahhahaahah"
+                android:textColor="@color/white"
+                android:textSize="14sp" />
+        </LinearLayout>
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_marginTop="@dimen/dimen_12"
+            android:layout_marginBottom="@dimen/dimen_12"
+            android:layout_height="@dimen/dimen_48"
+            android:background="@color/grey"
+            android:layout_toEndOf="@+id/layout"
+            />
+        <TextView
+            android:id="@+id/tv_Agreement"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="@dimen/dimen_4"
+            android:layout_toEndOf="@+id/view"
+            android:text="Agreement"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+        <TextView
+            android:id="@+id/tv_personal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_below="@+id/tv_Agreement"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:layout_toEndOf="@+id/view"
+            android:drawableTint="@color/white"
+            android:text="1/1"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            app:drawableStartCompat="@drawable/user" />
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

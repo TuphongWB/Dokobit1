@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:padding="@dimen/dimen_16">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+    <TextView
+        android:id="@+id/dialog_linkcard"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Link card"
+        android:layout_centerVertical="true"
+        android:textColor="@color/black"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:layout_marginStart="@dimen/dimen_4"
+        android:paddingBottom="@dimen/dimen_8"
+        />
+
+    <ImageView
+        android:id="@+id/close_icon1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_close"
+        android:layout_alignParentEnd="true"
+        android:layout_centerVertical="true"
+        android:padding="@dimen/dimen_8"/>
+    </RelativeLayout>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginBottom="@dimen/dimen_8"
+        />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/cardholder"
+            android:text="Card holder name *"/>
+
+        <EditText
+            android:id="@+id/edit_holder"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:background="@drawable/border"
+            android:backgroundTint="@null"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:padding="@dimen/dimen_8"
+            android:hint="Holder"
+            android:layout_below="@+id/cardholder"
+            android:textColor="@color/black"
+            android:autofillHints="name"
+            android:inputType="text" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/bankcard"
+            android:text="Bank card number*"/>
+
+        <EditText
+            android:id="@+id/edit_bankcard"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:background="@drawable/border"
+            android:backgroundTint="@null"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:padding="@dimen/dimen_8"
+            android:hint="1234 5678 9012 3456"
+            android:layout_below="@+id/bankcard"
+            android:autofillHints="creditCardNumber"
+            android:textColor="@color/black"
+
+            android:inputType="number" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/expiration"
+            android:text="Expiration date (MM/YY)*"/>
+
+        <EditText
+            android:id="@+id/edit_expiration"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:background="@drawable/border"
+            android:backgroundTint="@null"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:padding="@dimen/dimen_8"
+            android:hint="MM/YY"
+            android:textColor="@color/black"
+            android:layout_below="@+id/expiration"
+            android:autofillHints="creditCardExpirationDate"
+            android:inputType="date" />
+
+    </RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/code"
+            android:text="Security code*"/>
+
+        <EditText
+            android:id="@+id/edit_code"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/dimen_48"
+            android:background="@drawable/border"
+            android:backgroundTint="@null"
+            android:layout_marginTop="@dimen/dimen_8"
+            android:padding="@dimen/dimen_8"
+            android:layout_below="@+id/code"
+            android:autofillHints="creditCardSecurityCode"
+            android:textColor="@color/black"
+            android:drawableEnd="@drawable/credit_card"
+            android:inputType="numberSigned" />
+
+    </RelativeLayout>
+    <CheckBox
+        android:id="@+id/check_box"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Use this bank card for recurring payments"
+        android:layout_marginBottom="@dimen/dimen_24"/>
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/grey"
+        android:layout_marginBottom="@dimen/dimen_8"
+        />
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="end"
+        android:layout_marginTop="@dimen/dimen_16">
+
+        <Button
+            android:id="@+id/btn_cancel_linkcard"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_32"
+            android:background="@drawable/btn_button"
+            android:text="@string/cancel"
+            android:textColor="@color/colorPrimary"
+            android:layout_toStartOf="@+id/dialog_btn_linkcard"
+            android:textAllCaps="false"
+            android:layout_marginEnd="@dimen/dimen_8"/>
+
+        <Button
+            android:id="@+id/dialog_btn_linkcard"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/dimen_32"
+            android:text="Link card"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:background="@drawable/btn_continue"
+            android:layout_alignParentEnd="true"
+            />
+
+    </RelativeLayout>
+
+</LinearLayout>

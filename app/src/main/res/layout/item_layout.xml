@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+        <TextView
+            android:id="@+id/tv1"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/dimen_24"
+            android:text="A documents need my signature/approval"
+            android:textColor="@color/black"
+            android:layout_gravity="center_vertical"
+            android:layout_weight="1"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:trackCornerRadius="16dp"
+            app:thumbTint="@drawable/thumb"
+            android:layout_gravity="center_vertical"
+            app:trackTint="@drawable/track"
+            app:thumbStrokeColor="@color/my_checked_color"
+            app:thumbStrokeWidth="2dp" />
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:id="@+id/switch2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:minWidth="@dimen/dimen_48"
+            android:minHeight="@dimen/dimen_48"
+            android:checked="false"
+            app:thumbTint="@drawable/thumb"
+            android:layout_gravity="center_vertical"
+            app:trackTint="@drawable/track"/>
+
+
+</LinearLayout>

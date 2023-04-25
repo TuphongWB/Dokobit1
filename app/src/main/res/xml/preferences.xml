@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="14sp">
+    <PreferenceCategory
+        android:title="General Settings">
+        <SwitchPreferenceCompat
+            android:key="switch_preference"
+            android:title="Switch Preference"
+            android:summary="This is a switch preference"
+            android:textAlignment="viewStart"
+            android:defaultValue="false" />
+        <ListPreference
+            android:key="list_preference"
+            android:title="List Preference"
+            android:summary="This is a list preference"
+            android:entries="@array/reply_entries"
+            android:entryValues="@array/reply_values"
+            android:defaultValue="@string/reply_title"
+            android:textAlignment="viewStart"/>
+        <EditTextPreference
+            android:key="edittext_preference"
+            android:title="Edit Text Preference"
+            android:summary="This is an edit text preference"
+            android:dialogTitle="Enter your name"
+            android:defaultValue="@string/reply_title"
+            android:textAlignment="viewStart"/>
+    </PreferenceCategory>
+</PreferenceScreen>

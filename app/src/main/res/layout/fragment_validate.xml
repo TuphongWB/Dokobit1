@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".Fragment.ValidFragment">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/close_icon1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/ic_close"
+            android:layout_alignParentStart="true"
+            android:layout_centerVertical="true"
+            android:padding="@dimen/dimen_8"/>
+        <TextView
+            android:id="@+id/close"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_toEndOf="@+id/close_icon1"
+            android:layout_centerVertical="true"
+
+            android:text="Document validation"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Upload document"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+         />
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:id="@+id/cardFile">
+
+
+        <RelativeLayout
+            android:id="@+id/layout_spinner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="12sp">
+
+            <TextView
+                android:id="@+id/tv_file"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginStart="4dp"
+                android:text="Upload"
+                android:textColor="@android:color/white"
+                android:textSize="18sp" />
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:padding="4dp"
+                app:srcCompat="@drawable/backup"
+                />
+        </RelativeLayout>
+    </androidx.cardview.widget.CardView>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Select signature validation policy"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        />
+    <RadioGroup
+        android:id="@+id/radio_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_4"
+        android:padding="@dimen/dimen_8">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_button1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="All Electronic Signatures and Seals"
+                android:drawableEnd="@drawable/group"
+                android:drawableTint="@color/colorPrimary"
+                android:checked="true"
+                android:paddingEnd="@dimen/dimen_8"/>
+
+            <TextView
+                android:layout_marginStart="@dimen/dimen_32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:textSize="12sp"
+                android:text="@string/radiotext"/>
+
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radio_button2"
+
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Qualified Electronic Signatures and Seals"
+                android:drawableEnd="@drawable/user"
+                android:drawableTint="@color/colorPrimary"
+                android:paddingEnd="@dimen/dimen_8"/>
+
+            <TextView
+                android:layout_marginStart="@dimen/dimen_32"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/radiotext1"/>
+
+        </LinearLayout>
+    </RadioGroup>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/dimen_16"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Validate document"
+        android:textSize="16sp"
+        android:textColor="@android:color/darker_gray"
+        />
+    <Button
+        android:id="@+id/validate"
+        android:layout_width="match_parent"
+        android:layout_height="36dp"
+        android:layout_marginStart="@dimen/dimen_16"
+        android:layout_marginEnd="@dimen/dimen_16"
+        android:layout_marginTop="@dimen/dimen_32"
+        android:background="@drawable/btn_continue"
+        android:text="Validate"
+        android:textSize="12sp"
+        android:textAllCaps="false"
+        android:textColor="@color/white" />
+    <FrameLayout
+        android:id="@+id/fragment_container1"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+</LinearLayout>
