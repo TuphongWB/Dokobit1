@@ -7,17 +7,23 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
+import androidx.fragment.app.Fragment;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.dokobit.Adapter.ViewPager2Adapter;
+import com.example.dokobit.Fragment.DocumentOptionFragment;
+import com.example.dokobit.Fragment.UploadDocumentFragment;
+import com.example.dokobit.Myinterface.OnFileNameSelectedListener;
 import com.example.dokobit.databinding.ActivityUploadBinding;
 
 import me.relex.circleindicator.CircleIndicator3;
 
 
-public class UploadActivity extends AppCompatActivity {
+public class UploadActivity extends AppCompatActivity implements OnFileNameSelectedListener {
     private ActivityUploadBinding binding;
     private ViewPager2Adapter viewPager2Adapter;
+
+    private DocumentOptionFragment documentOptionFragment;
     private CircleIndicator3 indicator;
 
 
@@ -26,7 +32,6 @@ public class UploadActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityUploadBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-
 
 
         //Back stack
@@ -38,6 +43,9 @@ public class UploadActivity extends AppCompatActivity {
         viewPager2Adapter = new ViewPager2Adapter(getSupportFragmentManager(), getLifecycle());
 
         binding.fragmentContainer.setAdapter(viewPager2Adapter);
+
+
+
         //CircleIndicator
         indicator = findViewById(R.id.circle);
         indicator.setViewPager(binding.fragmentContainer);
@@ -45,10 +53,15 @@ public class UploadActivity extends AppCompatActivity {
         binding.fragmentContainer.registerOnPageChangeCallback(new ViewPager2.OnPageChangeCallback() {
             @Override
             public void onPageSelected(int position) {
-                if (position == 2){
+                if (position == 2) {
                     binding.layoutNext.setVisibility(View.GONE);
-                }else {
+                } else {
                     binding.layoutNext.setVisibility(View.VISIBLE);
+                }
+                if (position == 0){
+                    binding.layoutBack.setVisibility(View.GONE);
+                } else {
+                    binding.layoutBack.setVisibility(View.VISIBLE);
                 }
             }
         });
@@ -56,7 +69,7 @@ public class UploadActivity extends AppCompatActivity {
         binding.layoutNext.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (binding.fragmentContainer.getCurrentItem() < 2){
+                if (binding.fragmentContainer.getCurrentItem() < 2) {
                     binding.fragmentContainer.setCurrentItem(binding.fragmentContainer.getCurrentItem() + 1);
                 }
             }
@@ -64,12 +77,13 @@ public class UploadActivity extends AppCompatActivity {
         binding.layoutBack.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (binding.fragmentContainer.getCurrentItem() > 0){
+                if (binding.fragmentContainer.getCurrentItem() > 0) {
                     binding.fragmentContainer.setCurrentItem(binding.fragmentContainer.getCurrentItem() - 1);
                 }
             }
         });
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
@@ -83,4 +97,8 @@ public class UploadActivity extends AppCompatActivity {
         return super.onOptionsItemSelected(item);
     }
 
+    @Override
+    public void onFileNameSelected(String fileName) {
+
+    }
 }

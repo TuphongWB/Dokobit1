@@ -12,6 +12,7 @@ import android.widget.TimePicker;
 
 import androidx.fragment.app.Fragment;
 
+import com.example.dokobit.Myinterface.OnFileNameSelectedListener;
 import com.example.dokobit.R;
 import com.example.dokobit.databinding.FragmentDocumentOptionBinding;
 
@@ -19,7 +20,7 @@ import java.util.Calendar;
 import java.util.Locale;
 
 
-public class DocumentOptionFragment extends Fragment {
+public class DocumentOptionFragment extends Fragment implements OnFileNameSelectedListener {
     private FragmentDocumentOptionBinding binding;
     private Calendar calendar = Calendar.getInstance();
 
@@ -29,6 +30,9 @@ public class DocumentOptionFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         binding = FragmentDocumentOptionBinding.inflate(inflater);
+        binding.getRoot().findViewById(R.id.edit_filename);
+
+
 
         binding.getRoot().findViewById(R.id.tv_date).setOnClickListener(new View.OnClickListener() {
             @Override
@@ -82,5 +86,11 @@ public class DocumentOptionFragment extends Fragment {
         }, year, month, dayOfMonth);
 
         datePickerDialog.show();
+    }
+
+
+    @Override
+    public void onFileNameSelected(String fileName) {
+        binding.editFilename.setText(fileName);
     }
 }
