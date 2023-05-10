@@ -27,6 +27,7 @@
             android:name=".UploadActivity"
             android:exported="true"
             android:parentActivityName=".HomeActivity"
+            android:windowSoftInputMode="adjustNothing"
             android:theme="@style/Theme.MaterialComponents.DayNight.NoActionBar" />
         <activity
             android:name=".HomeActivity"

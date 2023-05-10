@@ -1,10 +1,8 @@
 package com.example.dokobit.Fragment;
 
-import static android.content.ContentValues.TAG;
-
+import android.app.Activity;
 import android.content.Context;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -21,6 +19,7 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
 
 import com.example.dokobit.Model.File;
+import com.example.dokobit.Model.FileNameData;
 import com.example.dokobit.Myinterface.IClickFile;
 import com.example.dokobit.Myinterface.OnFileNameSelectedListener;
 import com.example.dokobit.R;
@@ -31,8 +30,13 @@ import java.util.List;
 public class UploadDocumentFragment extends Fragment implements OnFileNameSelectedListener{
 
     private TextView mTextfilename;
+    private Button btn_upload;
+    private FileNameData fileNameData;
 
-    private OnFileNameSelectedListener mListener;
+
+
+    private OnFileNameSelectedListener mListener ;
+
 
 
     @Override
@@ -49,13 +53,14 @@ public class UploadDocumentFragment extends Fragment implements OnFileNameSelect
 
 
 
-
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_upload_file, container, false);
 
         mTextfilename = view.findViewById(R.id.text_file_name);
+        btn_upload = view.findViewById(R.id.button_upload);
+        fileNameData = FileNameData.getInstance();
 
 
 
@@ -71,13 +76,6 @@ public class UploadDocumentFragment extends Fragment implements OnFileNameSelect
             }
         });
 
-        Button btn_upload = view.findViewById(R.id.button_upload);
-        btn_upload.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                    clickOpenBottomSheet();
-                }
-        });
         CardView cardView = view.findViewById(R.id.cardFile);
         cardView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -89,12 +87,21 @@ public class UploadDocumentFragment extends Fragment implements OnFileNameSelect
         return view;
 
     }
+    @Override
+    public void onViewCreated(View view, Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+        btn_upload.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                clickOpenBottomSheet();
+            }
+        });
+    }
 
     private void clickOpenBottomSheet() {
         BottomSheetDialogFragment bottomSheetDialogFragment = new BottomSheetDialogFragment();
         bottomSheetDialogFragment.setOnFileNameSelectedListener(this);
         bottomSheetDialogFragment.show(getChildFragmentManager(), bottomSheetDialogFragment.getTag());
-
 
     }
 
@@ -122,14 +129,15 @@ public class UploadDocumentFragment extends Fragment implements OnFileNameSelect
             }
         }
     };
-    public void setFileName(String fileName) {
-        if (mTextfilename != null) {
-            mTextfilename.setText(fileName);
-        }
-    }
 
     @Override
     public void onFileNameSelected(String fileName) {
         mTextfilename.setText(fileName);
+        fileNameData.setFileName(fileName);
+        Activity activity = getActivity();
+        if (activity instanceof OnFileNameSelectedListener) {
+            OnFileNameSelectedListener listener = (OnFileNameSelectedListener) activity;
+            listener.onFileNameSelected(fileName);
+        }
     }
 }

@@ -15,6 +15,7 @@ import com.example.dokobit.databinding.FragmentUpBinding;
 public class UpFragment extends Fragment {
 
     private FragmentUpBinding binding;
+
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
@@ -30,8 +31,7 @@ public class UpFragment extends Fragment {
         binding.participants.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                AddParticipantsDialogFragment dialog = new AddParticipantsDialogFragment();
-                dialog.show(getParentFragmentManager(), "add_participants_dialog");
+                showDialogFragment();
             }
         });
         return binding.getRoot();
@@ -70,4 +70,6 @@ public class UpFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
 }

@@ -17,6 +17,7 @@ import androidx.activity.result.contract.ActivityResultContracts;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
+import com.example.dokobit.Adapter.ViewPager2Adapter;
 import com.example.dokobit.Myinterface.OnFileNameSelectedListener;
 import com.example.dokobit.R;
 import com.google.android.material.bottomsheet.BottomSheetDialog;
@@ -25,28 +26,18 @@ import com.google.android.material.textfield.TextInputEditText;
 import java.util.Objects;
 
 public class BottomSheetDialogFragment extends com.google.android.material.bottomsheet.BottomSheetDialogFragment{
-    private ActivityResultLauncher<String> mGetContent;
+
 
     private OnFileNameSelectedListener mListener;
 
+
+
+    private ActivityResultLauncher<String> getContent;
     public void setOnFileNameSelectedListener(OnFileNameSelectedListener listener) {
         this.mListener = listener;
     }
 
-    @Override
-    public void onAttach(@NonNull Context context) {
-        super.onAttach(context);
-        if (context instanceof OnFileNameSelectedListener) {
-            mListener = (OnFileNameSelectedListener) context;
-        } else {
-            throw new RuntimeException(context.toString() + " must implement OnFileNameSelectedListener");
-        }
-    }
-    private void onFileNameSelected(String fileName) {
-        if (mListener != null) {
-            mListener.onFileNameSelected(fileName);
-        }
-    }
+
 
     @NonNull
     @Override
@@ -56,32 +47,42 @@ public class BottomSheetDialogFragment extends com.google.android.material.botto
         View view = getLayoutInflater().inflate(R.layout.layout_bottom_sheet, null);
 
         Bottomsheet.setContentView(view);
-        mListener = (OnFileNameSelectedListener) getActivity();
-        setOnFileNameSelectedListener(mListener);
+
 
         LinearLayout selectfile = view.findViewById(R.id.upload_file);
-        TextView file = view.findViewById(R.id.filename);
-        TextView mTextFile = requireActivity().findViewById(R.id.text_file_name);
-        mListener = (OnFileNameSelectedListener) getActivity();
+
         selectfile.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                mGetContent.launch("*/*");
+                openFilePicker();
+
             }
         });
-        mGetContent = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
+        return Bottomsheet;
+    }
+    @Override
+    public void onCreate(@Nullable Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setupFilePickerActivityResult();
+
+
+    }
+    private void setupFilePickerActivityResult() {
+        getContent = registerForActivityResult(new ActivityResultContracts.GetContent(), new ActivityResultCallback<Uri>() {
             @Override
             public void onActivityResult(Uri result) {
                 String fileName = getFileNameFromUri(result);
                 if (mListener != null) {
                     mListener.onFileNameSelected(fileName);
-                    mTextFile.setText(fileName);
+
 
                 }
                 dismiss();
             }
         });
-        return Bottomsheet;
+    }
+    private void openFilePicker() {
+        getContent.launch("*/*");
     }
     private String getFileNameFromUri(Uri uri) {
         String fileName = null;

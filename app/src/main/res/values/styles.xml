@@ -39,4 +39,10 @@
         <item name="colorControlActivated">@color/my_checked_color</item>
         <item name="colorSwitchThumbNormal">@color/my_unchecked_color</item>
     </style>
+    <style name="FullscreenDialogTheme" parent="Theme.AppCompat.Light.Dialog">
+        <item name="android:windowFullscreen">true</item>
+        <item name="android:windowContentOverlay">@null</item>
+        <item name="android:windowIsFloating">false</item>
+        <item name="android:windowBackground">@android:color/black</item>
+    </style>
 </resources>

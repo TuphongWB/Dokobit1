@@ -9,7 +9,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/close_icon1"
+            android:id="@+id/close_icon"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:src="@drawable/ic_close"
@@ -20,8 +20,7 @@
             android:id="@+id/close"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-
-            android:layout_toEndOf="@+id/close_icon1"
+            android:layout_toEndOf="@+id/close_icon"
             android:layout_centerVertical="true"
 
             android:text="User Name"

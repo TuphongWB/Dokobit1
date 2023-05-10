@@ -7,14 +7,16 @@ import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
 import androidx.viewpager2.widget.ViewPager2;
 
 import com.example.dokobit.Adapter.ViewPager2Adapter;
+import com.example.dokobit.Fragment.BottomSheetDialogFragment;
 import com.example.dokobit.Fragment.DocumentOptionFragment;
-import com.example.dokobit.Fragment.UploadDocumentFragment;
+import com.example.dokobit.Fragment.UpFragment;
 import com.example.dokobit.Myinterface.OnFileNameSelectedListener;
 import com.example.dokobit.databinding.ActivityUploadBinding;
+import com.google.android.material.textfield.TextInputEditText;
 
 import me.relex.circleindicator.CircleIndicator3;
 
@@ -23,8 +25,11 @@ public class UploadActivity extends AppCompatActivity implements OnFileNameSelec
     private ActivityUploadBinding binding;
     private ViewPager2Adapter viewPager2Adapter;
 
-    private DocumentOptionFragment documentOptionFragment;
     private CircleIndicator3 indicator;
+    private String fileName;
+
+    private TextInputEditText mFileName;
+
 
 
     @Override
@@ -32,6 +37,8 @@ public class UploadActivity extends AppCompatActivity implements OnFileNameSelec
         super.onCreate(savedInstanceState);
         binding = ActivityUploadBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        BottomSheetDialogFragment bottomSheetDialogFragment = new BottomSheetDialogFragment();
+        bottomSheetDialogFragment.setOnFileNameSelectedListener(this);
 
 
         //Back stack
@@ -41,9 +48,10 @@ public class UploadActivity extends AppCompatActivity implements OnFileNameSelec
 
         //ViewPager2
         viewPager2Adapter = new ViewPager2Adapter(getSupportFragmentManager(), getLifecycle());
+        DocumentOptionFragment documentOptionFragment = new DocumentOptionFragment();
+        String tag = "documentOptionFragment";
 
         binding.fragmentContainer.setAdapter(viewPager2Adapter);
-
 
 
         //CircleIndicator
@@ -99,6 +107,8 @@ public class UploadActivity extends AppCompatActivity implements OnFileNameSelec
 
     @Override
     public void onFileNameSelected(String fileName) {
+        this.fileName = fileName;
+        DocumentOptionFragment documentOptionFragment = (DocumentOptionFragment) getSupportFragmentManager().findFragmentByTag("documentOptionFragment");
+        }
 
-    }
 }

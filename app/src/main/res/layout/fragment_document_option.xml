@@ -49,8 +49,7 @@
             android:layout_marginStart="@dimen/dimen_24"
             android:layout_marginTop="@dimen/dimen_8"
             android:padding="@dimen/dimen_8"
-            android:text="Categories"
-             />
+            android:text="Categories" />
         <ImageView
             android:layout_centerVertical="true"
             android:layout_alignParentEnd="true"
@@ -67,6 +66,7 @@
         android:alpha="0.2"/>
 
     <RelativeLayout
+        android:id="@+id/annotation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
@@ -97,10 +97,14 @@
                 android:textSize="14sp" />
 
             <TextView
+                android:id="@+id/option"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="First page - top"
                 android:textSize="12sp"
+                android:padding="2dp"
+                android:layout_marginTop="@dimen/dimen_4"
+                android:layout_marginBottom="@dimen/dimen_4"
                 android:textColor="@android:color/darker_gray" />
 
             <TextView
